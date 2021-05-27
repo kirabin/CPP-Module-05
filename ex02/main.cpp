@@ -10,26 +10,71 @@ int main() {
 
 	try {
 		PresidentialPardonForm ppf("tarr");
-		ppf.execute(high);
+		high.executeForm(ppf);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		PresidentialPardonForm ppf("tarr");
+		ppf.beSigned(high);
+		ppf.execute(low);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		PresidentialPardonForm ppf("garr");
+		ppf.beSigned(high);
+		high.executeForm(ppf);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+
+	try {
+		RobotomyRequestForm ppf("tarr");
+		high.executeForm(ppf);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		RobotomyRequestForm ppf("tarr");
+		ppf.beSigned(high);
+		ppf.execute(low);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		RobotomyRequestForm ppf("garr");
+		ppf.beSigned(high);
+		high.executeForm(ppf);
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
 	try {
-		Form bur("a23a", 2, 151);
+		ShrubberyCreationForm ppf("tarr");
+		high.executeForm(ppf);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		ShrubberyCreationForm ppf("tarr");
+		ppf.beSigned(high);
+		ppf.execute(low);
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		ShrubberyCreationForm ppf("garr");
+		ppf.beSigned(high);
+		high.executeForm(ppf);
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
-	try {
-		Form bur("as23", 2, 120);
-		high.signForm(bur);
-		low.signForm(bur);
-	} catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
 
 	return 0;
 }

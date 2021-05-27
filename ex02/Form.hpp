@@ -34,7 +34,7 @@ class Form {
 		int getGradeToExecute() const;
 
 		bool beSigned(const Bureaucrat& bureaucrat);
-		void execute(const Bureaucrat& executor) const;
+		virtual void execute(const Bureaucrat& executor) const;
 
 	protected:
 		bool _is_allowed_grade(int grade);
