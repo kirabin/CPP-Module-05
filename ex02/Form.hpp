@@ -24,16 +24,22 @@ class Form {
 			const char* what() const throw();
 		};
 
+		class IsNotSignedException : public std::exception {
+			const char* what() const throw();
+		};
+
 		std::string getName() const;
 		bool getIsSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 
 		bool beSigned(const Bureaucrat& bureaucrat);
+		void execute(const Bureaucrat& executor) const;
 
-	private:
+	protected:
 		bool _is_allowed_grade(int grade);
 		const std::string _name;
+		std::string _target;
 		bool _is_signed;
 		const int _grade_to_sign;
 		const int _grade_to_execute;

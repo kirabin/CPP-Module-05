@@ -1,4 +1,7 @@
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 // https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
 int main() {
@@ -6,7 +9,8 @@ int main() {
 	Bureaucrat	low("Low", 150);
 
 	try {
-		Form bur("a23a", -1, 120);
+		PresidentialPardonForm ppf("tarr");
+		ppf.execute(high);
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}

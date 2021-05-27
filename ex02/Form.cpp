@@ -36,6 +36,10 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return "Grade is too low";
 }
 
+const char* Form::IsNotSignedException::what() const throw() {
+	return "Form is not signed";
+}
+
 std::string Form::getName() const {
 	return this->_name;
 }
@@ -69,4 +73,12 @@ bool Form::beSigned(const Bureaucrat& bureaucrat) {
 		throw Form::GradeTooLowException();
 	}
 	return (true);
+}
+
+void Form::execute(const Bureaucrat& executor) const {
+	if (executor.getGrade() > this->_grade_to_execute) {
+		throw Form::GradeTooLowException();
+	} else if (!this->_is_signed) {
+		throw Form::IsNotSignedException();
+	}
 }
