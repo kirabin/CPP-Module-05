@@ -20,20 +20,9 @@ class Intern {
 		Intern&	operator =(const Intern& other);
 		Form*	makeForm(std::string form_name, std::string target) const;
 
-		Form*	createPresidentialPardonForm(const std::string& target);
-		Form*	createRobotomyRequestForm(const std::string& target);
-		Form*	createShrubberyCreationForm(const std::string& target);
-
-		class Map {
-			public:
-				Map(std::string n, Form* (*c)(const std::string& target));
-				std::string name;
-				Form* (*create)(const std::string&);
-		};
-
-	private:
-		static const int _pairs_count;
-
+		Form*	createPresidentialPardonForm(std::string& target);
+		Form*	createRobotomyRequestForm(std::string& target);
+		Form*	createShrubberyCreationForm(std::string& target);
 };
 
 #endif

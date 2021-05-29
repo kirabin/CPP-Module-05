@@ -10,8 +10,28 @@ int main() {
 	Form*   rrf;
 	Bureaucrat high("high", 1);
 
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	rrf->beSigned(high);
-	rrf->execute(high);
+	rrf = someRandomIntern.makeForm("rrform", "Bender");
+	if (rrf) {
+		rrf->beSigned(high);
+		rrf->execute(high);
+		delete rrf;
+	}
+	std::cout << std::endl;
+
+	rrf = someRandomIntern.makeForm("ppform", "Bender");
+	if (rrf) {
+		rrf->beSigned(high);
+		rrf->execute(high);
+		delete rrf;
+	}
+	std::cout << std::endl;
+	rrf = someRandomIntern.makeForm("scform", "Bender");
+	if (rrf) {
+		rrf->beSigned(high);
+		rrf->execute(high);
+		delete rrf;
+	}
+	std::cout << std::endl;
+	rrf = someRandomIntern.makeForm("aaaa", "Bender");
 	return 0;
 }
